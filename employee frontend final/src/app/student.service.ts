@@ -9,7 +9,7 @@ import { Student } from './student';
 export class StudentService {
 
   // Correct the baseURL to match the correct endpoint for creating students
-  private baseURL = "http://localhost:8082/api/student";  // Base URL for the API
+  private baseURL = "http://localhost:9999/student-service/api/student/getAllStudent";  // Base URL for the API
 
   constructor(private httpClient: HttpClient) { }
   

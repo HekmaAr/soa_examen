@@ -1,0 +1,69 @@
+<br><br>
+<br><br>
+<div class="container-sm">
+    <div class="col-md-6 offset-md-3 container-sm">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="row g-3 form-container container-sm">
+
+            <!-- First Name Field -->
+            <div class="form-group col-md-6">
+                <label><b>First Name</b></label>
+                <input type="text" class="form-control" id="firstName" [(ngModel)]="student.firstName" name="firstName" required
+                    minlength="3" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.errors }" />
+                <div *ngIf="f.submitted && firstName.errors" class="invalid-feedback">
+                    <div *ngIf="firstName.errors['required']">First name is required</div>
+                    <div *ngIf="firstName.errors['minlength']">First Name minimum 3 characters are required!</div>
+                </div>
+            </div>
+
+            <!-- Last Name Field -->
+            <div class="form-group col-md-6">
+                <label><b>Last Name</b></label>
+                <input type="text" class="form-control" id="lastName" [(ngModel)]="student.lastName" required name="lastName"
+                    #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.errors }">
+                <div *ngIf="f.submitted && lastName.errors" class="invalid-feedback">
+                    <div *ngIf="lastName.errors['required']">Last name is required</div>
+                </div>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+                <label><b>Email</b></label>
+                <input type="email" class="form-control" id="email" [(ngModel)]="student.email" name="email"
+                    required email #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" />
+                <div *ngIf="f.submitted && email.errors" class="invalid-feedback">
+                    <div *ngIf="email.errors['required']">Email is required</div>
+                    <div *ngIf="email.invalid">Invalid email format</div>
+                </div>
+            </div>
+             <!-- Address city Field -->
+             <div class="form-group col-md-6">
+                <label><b>City</b></label>
+                <input type="text" class="form-control" id="city" [(ngModel)]="student.city" name="city" required
+                    minlength="2" #city="ngModel" [ngClass]="{ 'is-invalid': f.submitted && city.errors }" />
+                <div *ngIf="f.submitted && city.errors" class="invalid-feedback">
+                    <div *ngIf="city.errors['required']">City is required</div>
+                    <div *ngIf="city.errors['minlength']">City minimum 2 characters are required!</div>
+                </div>
+            </div>
+
+            <!-- Address street Field -->
+            <div class="form-group col-md-6">
+                <label><b>Street</b></label>
+                <input type="text" class="form-control" id="street" [(ngModel)]="student.street" required name="street"
+                    #street="ngModel" [ngClass]="{ 'is-invalid': f.submitted && street.errors }">
+                <div *ngIf="f.submitted && street.errors" class="invalid-feedback">
+                    <div *ngIf="street.errors['required']">Last name is required</div>
+                </div>
+            </div>
+
+            <!-- Submit and Cancel Buttons -->
+            <div class="form-group col-md-6">
+                <button class="btn btn-success full-width-button" type="submit" [disabled]="!f.form.valid">Submit</button>
+            </div>
+            <div class="col-md-6">
+                <button type="button" (click)="goToStudentList()" class="btn btn-danger full-width-button">Cancel</button>
+            </div>
+
+        </form>
+    </div>
+</div>

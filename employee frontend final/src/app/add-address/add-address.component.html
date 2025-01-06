@@ -1,0 +1,48 @@
+<br><br>
+<br><br>
+<!-- <a routerLink="/show-all-employees" class="btn btn-primary">Go somewhere</a> -->
+<div class="container-sm">
+    <div class="col-md-6 offset-md-3  container-sm ">
+       <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" class="row g-3 form-container container-sm">
+  <!-- Your form fields go here -->
+  <div class="form-group col-md-6">
+    <label><b>City</b></label>
+    <input type="text" class="form-control" id="city" [(ngModel)]="address.city" name="city" required minlength="3" #city="ngModel" [ngClass]="{ 'is-invalid': f.submitted && city.errors }" />
+    <div *ngIf="f.submitted && city.errors" class="invalid-feedback">
+      <div *ngIf="city.errors['required']">City is required</div>
+      <div *ngIf="city.errors['minlength']">City minimum 3 characters are required!!!</div>
+    </div>
+  </div>
+
+
+
+            <div class="form-group col-md-6">
+                <label><b>Street</b></label>
+                <input type="text" class="form-control" id="street" [(ngModel)]="address.street" required name="street"
+                    #street="ngModel" [ngClass]="{ 'is-invalid': f.submitted && street.errors }"> 
+
+                <div *ngIf="f.submitted && street.errors" class="invalid-feedback">
+                    <div *ngIf="street.errors['required']">Last name is required</div>
+                    
+                </div>
+
+
+            </div>
+
+            <br><br><br><br>
+
+
+            <div class="form-group col-md-6">
+                <button class="btn btn-success full-width-button" type="submit" id="reg" [disabled]="">Submit</button>
+            </div>
+
+            <div class="col-md-6">
+                <button type="button" (click)="goToAddressList()"
+                    class="btn btn-danger full-width-button">Cancel</button>
+            </div>
+
+        </form>
+
+
+    </div>
+</div>

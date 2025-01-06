@@ -1,0 +1,57 @@
+<br>
+<br>
+<!-- <h1>Student List</h1> -->
+
+<div class="container">
+
+    <div >
+        <form (ngSubmit)="goToStudent()" >
+            <div class="form-group col-md-6 inline ">
+                
+                <!-- <input  [(ngModel)]="EnteredID" type="text" class="form-control" id="id" name="id" placeholder="Search by ID"> -->
+                <button class="btn btn-secondary " type="submit">Search</button>
+            </div>
+        </form>
+
+    </div>
+    <br>
+    <br>
+<div>
+<table style="margin-bottom: 50px;" class=" table table-responsive table-striped  border-dark">
+
+    <thead class="table-dark ">
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Street</th>
+            <th>Actions</th>
+        </tr>
+
+    </thead> 
+
+
+    <tbody>
+        <tr *ngFor = "let student of students">
+            <td>{{student.id}}</td>
+            <td>{{student.firstName}}</td>
+            <td>{{student.lastName}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.street}}</td>
+            <td>{{student.city}}</td>
+            
+            <td>
+                <button (click) = "updateStudent(student.id)" class = "btn  btn-secondary btn-sm"> Update</button>
+                <button (click) = "deleteStudent(student.id)" class = "btn btn-danger btn-sm" style="margin-left: 10px"> Delete</button>
+                <button (click) = "detailsOfStudent(student.id)" class = "btn btn-success btn-sm " style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+
+
+</table>
+<br><br><br><br>
+</div>
+

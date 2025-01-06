@@ -6,8 +6,9 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { EmployeeListComponent } from './employee-list/employee-list.component';
-import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { StudentListComponent } from './student-list/student-list.component';
+import { AddStudentComponent } from './add-student/add-student.component'; 
+import { AddAddresseComponent } from './add-address/add-address.component';
 import { FormsModule } from '@angular/forms';
 
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -16,8 +17,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import { AddressListComponent } from './address-list/address-list.component';
 
-import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
-import { ShowDetailsComponent } from './show-details/show-details.component';
+import { UpdateStudentComponent } from './update-student/update-student.component';
+import { ShowDetailsComponent } from './show-details-student/show-details-student.component';
+import { ShowDetailsComponentAddress } from './show-details-address/show-details-address.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -25,13 +27,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeListComponent,
+    StudentListComponent,
+    ShowDetailsComponentAddress,
     AddressListComponent,
-    AddEmployeeComponent,
-         UpdateEmployeeComponent,
-         ShowDetailsComponent,
-         
+    AddStudentComponent,
+    UpdateStudentComponent,
+    ShowDetailsComponent,
+    AddAddresseComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
